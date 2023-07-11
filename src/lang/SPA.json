@@ -1,0 +1,27 @@
+{
+    "profile": {
+        "menu": {
+            "home": "Inicio",
+            "aboutMe": "Acerca de Mi", 
+            "portfolio": "Proyectos", 
+            "contact": "¿Trabajamos?"
+        },
+        "dataText": { 
+            "introd1": "Hola!! Soy", 
+            "intro2": "Néstor Guzmán", 
+            "intro3": "desarrollador de software", 
+            "intro4": "especialista en frontend"
+        },
+        "titles": { 
+            "contactBtn": "Contáctame", 
+            "playBtn": "Juguemos",
+            "aboutMe": "Acerca de Mi", 
+            "Portfolio": "Proyectos", 
+            "contact":"Trabajemos juntos" 
+        },
+        "bio1": "Hola, soy Nestor, un desarrollador Frontend y de Javascript apasionado por la tecnología y las soluciones innovadoras. Con más de 4 años de experiencia, he trabajado en diversos proyectos de desarrollo web, desde pequeñas startups hasta grandes empresas.",
+        "bio2": "Mi especialidad es la creación de aplicaciones web eficientes y fáciles de usar. Me encanta trabajar con tecnologías modernas y herramientas de desarrollo, como React, Angular, Vue, Node.js, TypeScript, entre otros. Además, tengo amplia experiencia en la creación de sitios web responsivos y adaptables a diferentes dispositivos móviles.",
+        "skills": "Soy un apasionado de la resolución de problemas y siempre estoy buscando nuevas formas de mejorar la experiencia de usuario. Creo que el desarrollo web es una forma de arte, y me esfuerzo por crear diseños atractivos y limpios para cada uno de mis proyectos.",
+        "contactMe": "Si estás buscando un desarrollador web confiable y experimentado para tu próximo proyecto, no dudes en contactarme. Estoy emocionado de trabajar contigo y crear soluciones innovadoras juntos."
+    }
+}
