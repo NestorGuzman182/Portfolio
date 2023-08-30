@@ -1,3 +1,8 @@
+import '../css/styles.css';
+import '../css/animate.css';
+import '../images/next-logo.png';
+import '../images/profile.jpg';
+import '../images/profile-3.jpeg';
 
 let valueLang = 'ENG'
 let toggleConts = document.querySelectorAll(".toggle-cont");

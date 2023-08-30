@@ -1,11 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: './src/js/index.js',
+    entry: {
+        index: ['./src/js/index.js', './src/js/main.js','./src/js/menu.js', './src/js/info-trad.js']
+    },
     output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: 'js/main.js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].bundle.js'
     },
     resolve: {
         extensions: ['.js', '.json']
@@ -21,32 +24,22 @@ module.exports = {
             },
             {
                 test: /\.css?$/,
-                use: [
-                    {   loader: 'style-loader'  },
-                    {   loader: 'css-loader'    } 
-                ]
+                use: [  MiniCssExtractPlugin.loader, 'css-loader' ]
             },
             {
-                test: /\.(png|jpg|gif|svg)?$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]',
-                            outputPath: 'images/',
-                            publicPath: '../images/'
-                        } 
+                test: /\.(png|jpg|jpeg|gif|svg)?$/,
+                type: 'asset/resource',
+                generator:   {
+                       filename: 'images/[name].[ext]'
                     }
-                ]
             },
             {
                 test: /\.json$/,
-                loader: 'file-loader',
-                type: 'javascript/auto',
-                options: {
-                    name: '[name].[ext]',
-                    outputPath: 'lang/',
-                    publicPath: '../lang/'
+                type: 'asset/resource',
+                generator: {
+                    name: 'lang/[name].[ext]',
+/*                     outputPath: 'lang/',
+                    publicPath: '../lang/' */
                 }
             }
         ]
@@ -57,6 +50,10 @@ module.exports = {
             template: './src/index.html',
             filename: 'index.html'
         }),
+        new MiniCssExtractPlugin({
+            filename: '[name].bundle.css'
+        })
+      
     ],
     devServer: {
         static: { 
