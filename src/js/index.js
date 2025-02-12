@@ -1,5 +1,5 @@
 import { skills } from "./info-trad.js";
-//import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 
 let playgame = document.getElementById('play-game')
 playgame.addEventListener('click', game)
