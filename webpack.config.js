@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+//const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
     entry: {
@@ -11,7 +12,6 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].bundle.js',
-        publicPath: process.env.NODE_ENV === "production" ? "/Portfolio/" : "/"
     },
     resolve: {
         extensions: ['.js', '.json']

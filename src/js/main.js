@@ -6,7 +6,7 @@ import '../images/profile-3.jpeg';
 
 let valueLang = 'ENG'
 let toggleConts = document.querySelectorAll(".toggle-cont");
-let textsToChange = document.querySelectorAll("[data-section]")
+let textsToChange = document.querySelectorAll("[data-section]");
 
 toggleConts.forEach((toggleCont) => {
   let toggleDark = toggleCont.querySelector(".dark");
@@ -33,21 +33,12 @@ toggleConts.forEach((toggleCont) => {
   });
 })
 
-let changeLanguage = async (language) => {
+const changeLanguage = async (language) => {
   try {
     const basePath = window.location.hostname.includes("github.io") ? "/Portfolio" : "";
-
-    fetch(`${basePath}/lang/ENG.json`)
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById("bio-1").textContent = data.profile.bio1;
-        document.getElementById("bio-2").textContent = data.profile.bio2;
-      })
-      .catch(error => console.error("Error cargando el JSON:", error));
-
-    const response = await fetch(`./Portfolio/lang/${language}.json`);
+    const response = await fetch(`${basePath}/lang/${language}.json`);
     const data = await response.json();
-    console.log('data => ', data);
+    console.log('base path => ', basePath);
 
     textsToChange.forEach(text => {
       let section = text.getAttribute("data-section");
