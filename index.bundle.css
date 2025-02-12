@@ -20,9 +20,9 @@
 }
 
 body{
-    background-image: url(../images/background..png) !important;
+    background-image: url(images/background..png) !important;
     font-family: Roboto;
-    max-width: 1600px;
+    max-width: 1420px;
     margin: auto;
     color: var(--white);
 }
@@ -261,7 +261,7 @@ h1 span{
 .container__typewriter p:nth-child(2){
   color: var(--primary-color);
   font-size: 2.5rem;
-  line-height: 4rem;
+  line-height: 2.5rem;
 }
 .container__typewriter p:nth-child(3){
   font-size: 1.3rem;
@@ -380,7 +380,7 @@ h1 span{
   filter: drop-shadow(0 0 20px rgb(247, 0, 255));
 }
 main{
-  height: 100vh;
+  height: 90vh;
 }
 section{
   height: auto;
@@ -686,7 +686,7 @@ footer{
         display: flex;
         flex-direction: row;
         align-items: center;
-        max-width: 1439px;
+        max-width: 1280px;
     }
     .container__title{
       order: 1;
