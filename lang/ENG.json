@@ -1,0 +1,27 @@
+{
+    "profile": {
+        "menu": {
+            "home": "Home",
+            "aboutMe": "About Me", 
+            "portfolio": "Projects", 
+            "contact": "Work Together?"
+        },
+        "dataText": { 
+            "introd1": "Hi!! I'm", 
+            "intro2": "Néstor Guzmán", 
+            "intro3": "software developer", 
+            "intro4": "and frontend specialist"
+        },
+        "titles": { 
+            "contactBtn": "Contact Me!", 
+            "playBtn": "Play Me!",
+            "aboutMe": "About Me", 
+            "Portfolio": "Portfolio", 
+            "contact":"Contact Me" 
+        },
+        "bio1": "Hi, I'm Nestor, a Frontend and Javascript developer passionate about technology and innovative solutions. With over 4 years of experience, I have worked on various web development projects, from small startups to large companies.",
+        "bio2": "My specialty is creating efficient and user-friendly web applications. I love working with modern technologies and development tools, such as React, Angular, Vue, Node.js, TypeScript, among others. Additionally, I have extensive experience in creating responsive websites that adapt to different mobile devices.",
+        "skills": "I am a problem solver and am always looking for new ways to improve the user experience. I believe that web development is a form of art, and I strive to create attractive and clean designs for each of my projects.",
+        "contactMe": "If you're looking for a reliable and experienced web developer for your next project, don't hesitate to contact me. I'm excited to work with you and create innovative solutions together."
+    }
+}
