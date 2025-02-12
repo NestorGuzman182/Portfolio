@@ -12,33 +12,43 @@ toggleConts.forEach((toggleCont) => {
   let toggleDark = toggleCont.querySelector(".dark");
   let toggleLight = toggleCont.querySelector(".light");
   let flag = false;
-  
+
   toggleCont.addEventListener("click", (e) => {
-      console.log(e)
-      flag = !flag;
-      console.log(flag)
-      if (flag) {
-          toggleDark.classList.remove("active");
-          toggleLight.classList.add("active");
-          valueLang = e.target.parentElement.dataset.language;
-          console.log(valueLang)
-          changeLanguage(valueLang);
-      } else {
-          toggleDark.classList.add("active");
-          toggleLight.classList.remove("active");
-          valueLang = e.target.children[0].dataset.language;
-          console.log(valueLang)
-          changeLanguage(valueLang);
-      }
+    console.log(e)
+    flag = !flag;
+    console.log(flag)
+    if (flag) {
+      toggleDark.classList.remove("active");
+      toggleLight.classList.add("active");
+      valueLang = e.target.parentElement.dataset.language;
+      console.log(valueLang)
+      changeLanguage(valueLang);
+    } else {
+      toggleDark.classList.add("active");
+      toggleLight.classList.remove("active");
+      valueLang = e.target.children[0].dataset.language;
+      console.log(valueLang)
+      changeLanguage(valueLang);
+    }
   });
 })
 
 let changeLanguage = async (language) => {
   try {
-    const response = await fetch(`./lang/${language}.json`);
+    const basePath = window.location.hostname.includes("github.io") ? "/Portfolio" : "";
+
+    fetch(`${basePath}/lang/ENG.json`)
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("bio-1").textContent = data.profile.bio1;
+        document.getElementById("bio-2").textContent = data.profile.bio2;
+      })
+      .catch(error => console.error("Error cargando el JSON:", error));
+
+    const response = await fetch(`./Portfolio/lang/${language}.json`);
     const data = await response.json();
     console.log('data => ', data);
-  
+
     textsToChange.forEach(text => {
       let section = text.getAttribute("data-section");
       let value = text.getAttribute("data-value");
@@ -46,7 +56,7 @@ let changeLanguage = async (language) => {
       if (data[section] && data[section][value]) {
         text.textContent = data[section][value];
       }
-    }); 
+    });
   } catch (error) {
     console.error('Error al cargar la informacion: ', error);
   }
@@ -69,17 +79,17 @@ const typeWriter = (() => {
       letterIndex++;
     } else {
       clearInterval(intervalId);
-        setTimeout(() => {
-          if (index < elements.length - 1) {
-            index++;
-            letterIndex = 0;
-            intervalId = setInterval(type, 100);
-          } else {
-            setTimeout(() => {
-              intervalId = setInterval(deleteText, 50);
-            }, 2000);
-          }
-        }, 500);
+      setTimeout(() => {
+        if (index < elements.length - 1) {
+          index++;
+          letterIndex = 0;
+          intervalId = setInterval(type, 100);
+        } else {
+          setTimeout(() => {
+            intervalId = setInterval(deleteText, 50);
+          }, 2000);
+        }
+      }, 500);
     }
   }
 
@@ -113,12 +123,12 @@ const typeWriter = (() => {
   }
 
   function start() {
-      elements[index].classList.add('visible');
-      intervalId = setInterval(type, 100);
+    elements[index].classList.add('visible');
+    intervalId = setInterval(type, 100);
   }
 
   document.addEventListener('visibilitychange', () => {
-      clearInterval(intervalId);
+    clearInterval(intervalId);
   });
 
   return {

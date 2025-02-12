@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
@@ -9,7 +10,8 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].bundle.js'
+        filename: '[name].bundle.js',
+        publicPath: process.env.NODE_ENV === "production" ? "/Portfolio/" : "/"
     },
     resolve: {
         extensions: ['.js', '.json']
@@ -39,8 +41,6 @@ module.exports = {
                 type: 'asset/resource',
                 generator: {
                     name: 'lang/[name].[ext]',
-/*                     outputPath: 'lang/',
-                    publicPath: '../lang/' */
                 }
             }
         ]
@@ -54,6 +54,11 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: '[name].bundle.css'
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: "public/lang", to: "lang" },
+              ],
         })
       
     ],
