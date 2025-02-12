@@ -34,55 +34,86 @@ toggleConts.forEach((toggleCont) => {
 })
 
 let changeLanguage = async (language) => {
-  let requestJson = await fetch(`./lang/${language}.json`);
-  var textLang = await requestJson.json();
+  try {
+    const response = await fetch(`./lang/${language}.json`);
+    const data = await response.json();
+    console.log('data => ', data);
+  
+    textsToChange.forEach(text => {
+      let section = text.getAttribute("data-section");
+      let value = text.getAttribute("data-value");
 
-  for (let textToChange of textsToChange) {
-     let section = textToChange.dataset.section
-     const value = textToChange.dataset.value
-     if(section.includes('|')){
-       section = section.split('|')
-       textToChange.innerText = textLang[section[0]][section[1]][value]
-     }else {
-      console.log({section})
-      console.log({value})
-      textToChange.innerText = textLang[section][value];
-     }
-  } 
+      if (data[section] && data[section][value]) {
+        text.textContent = data[section][value];
+      }
+    }); 
+  } catch (error) {
+    console.error('Error al cargar la informacion: ', error);
+  }
 }
 
 
-const typeWriter = (function() {
+const typeWriter = (() => {
   const elements = document.querySelectorAll('.container__typewriter p');
   let index = 0;
-  let currentElement = elements[index];
-  let text = currentElement.getAttribute('data-text');
+
   let letterIndex = 0;
   let intervalId;
 
   function type() {
+    let currentElement = elements[index];
+    let text = currentElement.getAttribute('data-text');
+
     if (letterIndex < text.length) {
       currentElement.textContent += text.charAt(letterIndex);
       letterIndex++;
     } else {
       clearInterval(intervalId);
-      currentElement.classList.add('visible');
-      index++;
-      if (index < elements.length) {
-        currentElement = elements[index];
-        text = currentElement.getAttribute('data-text');
-        letterIndex = 0;
         setTimeout(() => {
-          currentElement.textContent = '';
-          currentElement.classList.add('visible');
-          intervalId = setInterval(type, 100);
-        }, 1000);
+          if (index < elements.length - 1) {
+            index++;
+            letterIndex = 0;
+            intervalId = setInterval(type, 100);
+          } else {
+            setTimeout(() => {
+              intervalId = setInterval(deleteText, 50);
+            }, 2000);
+          }
+        }, 500);
+    }
+  }
+
+  function deleteText() {
+    const currentElement = elements[index];
+
+    if (letterIndex > 0) {
+      currentElement.textContent = currentElement.textContent.slice(0, -1);
+      letterIndex--;
+    } else {
+      clearInterval(intervalId);
+      if (index > 0) {
+        index--;
+        letterIndex = elements[index].getAttribute('data-text').length;
+        intervalId = setInterval(deleteText, 50);
+      } else {
+        setTimeout(reset, 500);
       }
     }
   }
 
+  function reset() {
+    elements.forEach(el => {
+      el.textContent = '';
+      el.classList.remove('visible');
+    });
+    index = 0;
+    letterIndex = 0;
+    elements[index].classList.add('visible');
+    intervalId = setInterval(type, 100);
+  }
+
   function start() {
-      //currentElement.classList.add('visible');
+      elements[index].classList.add('visible');
       intervalId = setInterval(type, 100);
   }
 

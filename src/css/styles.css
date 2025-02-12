@@ -22,13 +22,13 @@
 body{
     background-image: url("../images/background.png") !important;
     font-family: Roboto;
-    max-width: 1600px;
+    max-width: 1420px;
     margin: auto;
     color: var(--white);
 }
 header{
 /*     position: fixed; */
-    height: 100px;
+    height: 70px;
     max-width: 1600px;
     display: flex;
     justify-content: space-around;
@@ -99,7 +99,7 @@ header .is-active {
 }
 header img{
     height: auto;
-    width: 200px;
+    width: 140px;
     margin: 10px 0;
     object-fit: cover;
     animation: backInDown;
@@ -196,7 +196,7 @@ header .menu__list a, header i{
   position: fixed;
   z-index: 100;
   right: 20px;
-  top: 30px;
+  top: 20px;
 }
 main{
     width: auto;
@@ -261,7 +261,7 @@ h1 span{
 .container__typewriter p:nth-child(2){
   color: var(--primary-color);
   font-size: 2.5rem;
-  line-height: 4rem;
+  line-height: 2.5rem;
 }
 .container__typewriter p:nth-child(3){
   font-size: 1.3rem;
@@ -380,7 +380,7 @@ h1 span{
   filter: drop-shadow(0 0 20px rgb(247, 0, 255));
 }
 main{
-  height: 100vh;
+  height: 90vh;
 }
 section{
   height: auto;
@@ -568,7 +568,7 @@ form > .fields > .field {
   -webkit-flex-shrink: 0;
   -ms-flex-shrink: 0;
   flex-shrink: 0;
-  padding: 1.5rem 0 0 1.5rem;
+  padding: 1.5rem 0 0;
   margin: auto;
   width: calc(90% - 1.5rem);
 }
@@ -653,6 +653,7 @@ footer{
   transition: opacity .5s;
   animation: spin 2.5s linear infinite;
 }
+
 @keyframes spin {
   0% {
     --rotate: 0deg;
@@ -661,7 +662,14 @@ footer{
     --rotate: 360deg;
   }
 }
+
 @media(min-width: 787px){
+    header {
+      height: 100px;
+    }
+    header img {
+      width: 200px;
+    }
     header  .menu__list{
         display: none;
     }
@@ -686,7 +694,7 @@ footer{
         display: flex;
         flex-direction: row;
         align-items: center;
-        max-width: 1439px;
+        max-width: 1280px;
     }
     .container__title{
       order: 1;

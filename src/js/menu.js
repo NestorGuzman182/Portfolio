@@ -1,5 +1,4 @@
 const ipad = window.matchMedia('screen and (max-width: 786px');
-console.log(window.matchMedia('screen and (max-width: 786px'));
 
 
 const menu = document.querySelector('.navbar');
