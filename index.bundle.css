@@ -99,7 +99,7 @@ header .is-active {
 }
 header img{
     height: auto;
-    width: 200px;
+    width: 140px;
     margin: 10px 0;
     object-fit: cover;
     animation: backInDown;
@@ -662,6 +662,9 @@ footer{
   }
 }
 @media(min-width: 787px){
+    header img {
+      width: 200px;
+    }
     header  .menu__list{
         display: none;
     }
