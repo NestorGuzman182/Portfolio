@@ -9,6 +9,7 @@
     --secondary-color: #f074fd;
     --dark-color:#131e34;
     --second-dark-color: #152238;
+    --bg-dark: #060d13;
     --white: #eff3f8;
 }
 
@@ -353,6 +354,25 @@ h1 span{
     top: 250px;
     right: 0;
 }
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.buttons-container button,
+.swal2-confirm {
+    width: 100px;  
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+    box-shadow: none;
+    line-height: 0;
+}
 .container__social-network li{
   list-style: none;
   margin: 20px;
@@ -661,6 +681,94 @@ footer{
   100% {
     --rotate: 360deg;
   }
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  justify-content: center;
+  margin: 20px auto;
+  background-color: transparent;
+}
+.board.disabled {
+  pointer-events: none; 
+  filter: blur(8px);
+  opacity: 0.6;
+}
+.board__cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  color: white;
+  background-color: transparent;
+}
+.board__cell i {
+  font-size: 72px;
+}
+.board__cell.x {
+  color: #f074fd !important;
+  text-shadow: 0 0 10px #d58cff, 0 0 20px #d58cff;
+}
+.board__cell.o {
+  color: #70f8d0;
+  text-shadow: 0 0 10px #70f8d0, 0 0 20px #70f8d0;
+}
+.grid-lines {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: -1;
+}
+.line {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 10px white;
+}
+.vertical { width: 5px; height: 300px; }
+.horizontal { height: 5px; width: 300px; }
+.vertical:nth-child(1) { left: 95px; }
+.vertical:nth-child(2) { left: 195px; }
+.horizontal:nth-child(3) { top: 95px; }
+.horizontal:nth-child(4) { top: 195px; }
+.result {
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 0 0 5px white;
+  margin-top: 20px;
+}
+button {
+  margin-top: 15px;
+  padding: 10px;
+  cursor: pointer;
+  background: #222;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+button:hover {
+  background: #ff6b81;
 }
 
 @media(min-width: 787px){
