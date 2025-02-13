@@ -30,7 +30,7 @@ body{
 header{
 /*     position: fixed; */
     height: 70px;
-    max-width: 1600px;
+    max-width: 1420px;
     display: flex;
     justify-content: space-around;
     will-change: scroll-position;
