@@ -436,18 +436,19 @@ h3{
 }
 section svg{
   fill: var(--primary-color);
-  stroke: var(--dark-color);
+/*   stroke: var(--dark-color); */
 }
 .container__general {
   display: flex;
+  flex-wrap: wrap;
   padding: 15px;
   margin: 0;
   background-color: var(--bg-dark);
 }
-.container__skills-icons{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.container__skill svg, .container__skill i {
+  height: 70px;
+  max-width: 70px;
+  font-size: 70px;
 }
 details[open] summary {
   background: var(--accordion-active);
