@@ -438,15 +438,43 @@ section svg{
   fill: var(--primary-color);
   stroke: var(--dark-color);
 }
+.container__general {
+  display: flex;
+  padding: 15px;
+  margin: 0;
+  background-color: var(--bg-dark);
+}
 .container__skills-icons{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
+details[open] summary {
+  background: var(--accordion-active);
+}
+.container__categories {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dark-color);
+  border: var(--primary-color) solid 2px;
+  border-radius: 4px;
+}
+.container__categories details {
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+}
+.subsection {
+  margin-top: 20px;
+}
+
+.container__categories details summary{
+  font-weight: 700;
+  padding: 15px;
+}
 .container__skill{
   width: 70px;
   margin: 8px 24px;
-  padding: 5px;
+/*   padding: 5px; */
   align-self: baseline;
   text-align: center;
   font-weight: 700;
