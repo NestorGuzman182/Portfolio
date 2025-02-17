@@ -12,6 +12,20 @@ if (input && !input.getAttribute("type")) {
     input.setAttribute("type", "text");
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const subsections = document.querySelectorAll('.subsection');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log('entry =>', entry);
+            if(entry.isIntersecting) {
+                console.log('Mostrando');
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.2 });
+    subsections.forEach((sub) => observer.observe(sub));
+})
+
 async function skillRender() {
     let render = document.getElementById('skills-render');
     const categories = Object.values(orderByCategory(skills));
@@ -109,3 +123,5 @@ function setupGame() {
     const confirmButton = document.querySelector(".swal2-confirm");
     buttonsContainer.appendChild(confirmButton);
 }
+
+
