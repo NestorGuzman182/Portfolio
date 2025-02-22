@@ -29,8 +29,7 @@ body{
     margin: auto;
     color: var(--white);
 }
-header{
-/*     position: fixed; */
+header {
     height: 70px;
     max-width: 1420px;
     display: flex;
@@ -290,7 +289,7 @@ h1 span{
     height: 180px;
     opacity: 0;
     transform: translateX(-100px);
-    animation: fadeInLeft 1s ease-out forwards;
+    animation: fadeInLeft 1.8s ease-out forwards;
 }
 .container__image-profile{
     position: relative;
@@ -298,7 +297,7 @@ h1 span{
     margin: 50px 0;
     text-align: center;
     transform: translateX(100px);
-    animation: fadeInRight 1s ease-out forwards;
+    animation: fadeInRight 1.8s ease-out forwards;
 }
 .container__image-profile img{
     width: 70%;
@@ -828,6 +827,7 @@ button {
 button:hover {
   background: #ff6b81;
 }
+
 @keyframes fadeInLeft {
   from {
       opacity: 0;
@@ -851,8 +851,15 @@ button:hover {
 }
 
 @media(min-width: 787px){
+    body {
+      margin-top: 100px;
+    }
     header {
+      position: fixed;
+      top: 0; 
+      width: -webkit-fill-available;
       height: 100px;
+      z-index: 1000;
     }
     header img {
       width: 200px;
@@ -866,6 +873,8 @@ button:hover {
       align-items: center;
       width: -webkit-fill-available;
       margin: auto;
+      animation: backInDown;
+      animation-duration: 1.2s;
     }
     .navbar-desktop ul.menu__desk{
       width: -webkit-fill-available;
@@ -929,7 +938,7 @@ button:hover {
         0 0 100px rgba(38,104,127,1),
         0 0 120px rgba(38,104,127,1);
     }
-    .menu__desk a:hover{
+    .menu__desk a:hover, .menu__desk a.active{
       color: var(--secondary-color);
       text-decoration: line-through;
       text-shadow: 
@@ -962,6 +971,14 @@ button:hover {
     }
     .container__image-about, .container__text-about{
       width: 50%;
+    }
+    section {
+      position: relative;
+      scroll-margin-top: 80px;
+      padding-top: 20px;
+    }
+    .scrolled {
+      background-color: rgba(6, 13, 19, 0.9);
     }
 }
 @charset "UTF-8";/*!
