@@ -19,7 +19,9 @@
     box-sizing: border-box;
     color: var(--white);
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body{
     background-image: url("../images/background.png") !important;
     font-family: Roboto;
@@ -27,14 +29,13 @@ body{
     margin: auto;
     color: var(--white);
 }
-header{
-/*     position: fixed; */
+header {
     height: 70px;
     max-width: 1420px;
     display: flex;
     justify-content: space-around;
     will-change: scroll-position;
-    transition-duration: transform 0.7s linear;
+    transition: transform 0.7s linear;
 }
 header .navbar {
     position: absolute;
@@ -42,7 +43,7 @@ header .navbar {
     left: -100vh;
     bottom: 0;
     margin: auto;
-    transition: 0.7s;
+    transition: all 0.7s ease-in-out;
     z-index: 10;
   }
   header .navbar-brand {
@@ -67,8 +68,10 @@ header .menu__list i {
     margin:0 20px;
 }
 #btn-menu-2{
-    display: none;
     z-index: 1000;
+}
+.hidden {
+  display: none;
 }
 header .menu__list a {
     text-decoration: none;
@@ -77,7 +80,7 @@ header .menu__list a {
 }
 header .menu__list a:hover {
     color: var(--secondary-color);
-}
+} 
 
 header .menu__list .nav-item {
     align-content: left;
@@ -91,8 +94,9 @@ header i{
 header .is-active {
     position: fixed;
     left: 0;
+    opacity: 0.9;
     transform: translateX(0px);
-    transition-duration: transform 0.5s linear;
+    transition: all 0.3s linear;
 }
 
 .container-logo{
@@ -199,6 +203,9 @@ header .menu__list a, header i{
   right: 20px;
   top: 20px;
 }
+.btn-mobile i {
+  transition: opacity 0.3s ease-in-out;
+}
 main{
     width: auto;
     display: flex;
@@ -282,7 +289,7 @@ h1 span{
     height: 180px;
     opacity: 0;
     transform: translateX(-100px);
-    animation: fadeInLeft 1s ease-out forwards;
+    animation: fadeInLeft 1.8s ease-out forwards;
 }
 .container__image-profile{
     position: relative;
@@ -290,7 +297,7 @@ h1 span{
     margin: 50px 0;
     text-align: center;
     transform: translateX(100px);
-    animation: fadeInRight 1s ease-out forwards;
+    animation: fadeInRight 1.8s ease-out forwards;
 }
 .container__image-profile img{
     width: 70%;
@@ -435,6 +442,11 @@ section p{
 .container__image-about img{
   width: -webkit-fill-available;
 }
+.container__text-about {
+  background-color: var(--bg-dark);
+  border-radius: 20px;
+  align-content: center;
+}
 h3{
   color: var(--primary-color);
 }
@@ -445,14 +457,15 @@ section svg{
 .container__general {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding: 15px;
   margin: 0;
   background-color: var(--bg-dark);
 }
 .container__skill svg, .container__skill i {
-  height: 70px;
-  max-width: 70px;
-  font-size: 70px;
+  height: 60px;
+  max-width: 60px;
+  font-size: 60px;
 }
 details[open] summary {
   background: var(--accordion-active);
@@ -489,7 +502,7 @@ details[open] summary {
 }
 .container__skill{
   width: 70px;
-  margin: 8px 24px;
+  margin: 8px 16px;
 /*   padding: 5px; */
   align-self: baseline;
   text-align: center;
@@ -814,6 +827,7 @@ button {
 button:hover {
   background: #ff6b81;
 }
+
 @keyframes fadeInLeft {
   from {
       opacity: 0;
@@ -837,8 +851,15 @@ button:hover {
 }
 
 @media(min-width: 787px){
+    body {
+      margin-top: 100px;
+    }
     header {
+      position: fixed;
+      top: 0; 
+      width: -webkit-fill-available;
       height: 100px;
+      z-index: 1000;
     }
     header img {
       width: 200px;
@@ -852,6 +873,8 @@ button:hover {
       align-items: center;
       width: -webkit-fill-available;
       margin: auto;
+      animation: backInDown;
+      animation-duration: 1.2s;
     }
     .navbar-desktop ul.menu__desk{
       width: -webkit-fill-available;
@@ -915,7 +938,7 @@ button:hover {
         0 0 100px rgba(38,104,127,1),
         0 0 120px rgba(38,104,127,1);
     }
-    .menu__desk a:hover{
+    .menu__desk a:hover, .menu__desk a.active{
       color: var(--secondary-color);
       text-decoration: line-through;
       text-shadow: 
@@ -948,5 +971,13 @@ button:hover {
     }
     .container__image-about, .container__text-about{
       width: 50%;
+    }
+    section {
+      position: relative;
+      scroll-margin-top: 80px;
+      padding-top: 20px;
+    }
+    .scrolled {
+      background-color: rgba(6, 13, 19, 0.9);
     }
 }

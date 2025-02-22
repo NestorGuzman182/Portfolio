@@ -17,13 +17,13 @@
         </div>
         <nav class="navbar">
             <ul class="nav menu__list">
-                <li class="nav-item"><i class="fas fa-home"></i> <a href="" data-section="profile|menu"
+                <li class="nav-item"><i class="fas fa-home"></i> <a href="#" data-section="profile|menu"
                         data-value="home">Home</a></li>
                 <li class="nav-item"><i class="fas fa-user-circle"></i> <a href="#about-me" data-section="profile|menu"
                         data-value="aboutMe">About Me</a></li>
-                <li class="nav-item"><i class="fas fa-tools"></i> <a href="" data-section="profile|menu"
+                <li class="nav-item"><i class="fas fa-tools"></i> <a href="#portfolio" data-section="profile|menu"
                         data-value="portfolio">Projects</a></li>
-                <li class="nav-item"><i class="fas fa-suitcase"></i> <a href="" data-section="profile|menu"
+                <li class="nav-item"><i class="fas fa-suitcase"></i> <a href="#contact-me" data-section="profile|menu"
                         data-value="contact">Work Together?</a></li>
                 <div class="toggle-cont" style="margin-top: 100px;">
                     <div class="toggle dark active" data-language="ENG">
@@ -38,11 +38,11 @@
 
         <nav class="navbar-desktop">
             <ul class="nav menu__desk">
-                <li class="nav-item"><a href="" data-section="profile|menu" data-value="home">Home</a></li>
+                <li class="nav-item"><a href="#" data-section="profile|menu" data-value="home">Home</a></li>
                 <li class="nav-item"><a href="#about-me" data-section="profile|menu" data-value="aboutMe">About Me</a>
                 </li>
-                <li class="nav-item"><a href="" data-section="profile|menu" data-value="portfolio">Projects</a></li>
-                <li class="nav-item"><a href="" data-section="profile|menu" data-value="contact">Work Together?</a></li>
+                <li class="nav-item"><a href="#portfolio" data-section="profile|menu" data-value="portfolio">Projects</a></li>
+                <li class="nav-item"><a href="#contact-me" data-section="profile|menu" data-value="contact">Work Together?</a></li>
             </ul>
             <div class="toggle-cont switch__desktop">
                 <div class="toggle dark active" data-language="ENG">
@@ -54,8 +54,8 @@
             </div>
         </nav>
         <div class="btn-mobile">
-            <i class="fas fa-bars" id="btn-menu"></i>
-            <i class="fas fa-times-circle" id="btn-menu-2"></i>
+            <i class="fas fa-bars" id="btn-menu" aria-label="Abrir menu"></i>
+            <i class="fas fa-times-circle hidden" id="btn-menu-2" aria-label="Cerrar menu"></i>
         </div>
     </header>
     <main>
@@ -67,8 +67,8 @@
                 <p data-text="and frontend specialist" data-section="profile|dataText" data-value="intro4"></p>
             </div>
             <div class="container__btn">
-                <a class="contact-me" data-section="profile|titles" data-value="playBtn" id="play-game">Play Me</a>
-                <a class="contact-me cta" data-section="profile|titles" data-value="contactBtn" id="contact-btn">Contact Me!</a>
+                <a class="contact-me" data-section="profile|titles" data-value="playBtn" id="play-game">Let's Play!</a>
+                <a class="contact-me cta" data-section="profile|titles" data-value="contactBtn" id="contact-btn">Let's Talk!</a>
             </div>
         </div>
 
@@ -101,8 +101,8 @@
                 </svg></a></li>
         </ul>
     </div>
-    <section class="about-me">
-        <h2 id="about-me" data-section="profile|titles" data-value="aboutMe">About Me</h2>
+    <section class="about-me" id="about-me">
+        <h2  data-section="profile|titles" data-value="aboutMe">About Me</h2>
         <div class="hero">
             <div class="container__image-about subsection">
                 <img src="./images/profile-3..jpeg" alt="">
@@ -116,8 +116,8 @@
             </div>
         </div>
     </section>
-    <section class="projects">
-        <h2 id="about-me" data-section="profile|titles" data-value="Portfolio">Portfolio</h2>
+    <section class="projects" id="portfolio">
+        <h2 data-section="profile|titles" data-value="Portfolio">Portfolio</h2>
         <div>
             <h3>Skills</h3>
             <p class="subsection" id="skill-text" data-section="profile" data-value="skills"></p>
@@ -134,8 +134,8 @@
             </div>
         </div>
     </section>
-    <section>
-        <h2 id="contact-me" data-section="profile|titles" data-value="contact">Contact Me</h2>
+    <section id="contact-me">
+        <h2 data-section="profile|titles" data-value="contact">Contact Me</h2>
         <div>
             <p data-section="profile" data-value="contactMe"></p>
             <form method="post" action="#" id="contact-form">
