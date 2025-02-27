@@ -27,6 +27,7 @@ body{
     font-family: Roboto;
     max-width: 1420px;
     margin: auto;
+    overflow-x: hidden;
     color: var(--white);
 }
 header {
@@ -138,7 +139,7 @@ header .menu__list a, header i{
     0 0 120px rgb(117, 38, 127);
 }
 
-.toggle-cont {
+/* .toggle-cont {
   position: relative;
   display: block;
   width: 100px;
@@ -149,16 +150,16 @@ header .menu__list a, header i{
   display: flex;
   align-items: center;
   box-shadow: 0 0 0.2rem #fff, 0 0 0.1rem #fff, 0 0 1rem #bc13fe, 0 0 0.4rem #bc13fe, 0 0 1.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
-}
+} */
 
-.toggle {
+/* .toggle {
   display: block;
   position: absolute;
   height: 42px;
   width: 42px;
   border-radius: 100px;
   transition: all 0.3s linear;
-}
+} */
 
 .toggle.dark {
   left: 5px;
@@ -193,6 +194,64 @@ header .menu__list a, header i{
   padding-left: 2px;
   font-weight: 700;
   color: var(--primary-color);
+}
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.toggle-button {
+  width: 80px;
+  height: 2.75rem;
+  padding: 8px;
+  margin-top: 0;
+  border-radius: 999px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  border: 2px solid;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+.toggle-button span {
+  position: relative;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+.toggle-button .circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  position: absolute;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.eng {
+  background-color: rgba(236, 72, 153, 0.1);
+  border-color: rgba(236, 72, 153, 0.5);
+  color: rgba(236, 72, 153, 1);
+}
+.eng span {
+  transform: translateX(29px);
+}
+.eng .circle {
+  background-color: rgba(236, 72, 153, 1);
+  left: 4px;
+}
+.spa {
+  background-color: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.5);
+  color: rgba(34, 197, 94, 1);
+}
+.spa span {
+  transform: translateX(4px);
+}
+.spa .circle {
+  background-color: rgba(34, 197, 94, 1);
+  left: calc(100% - 28px);
 }
 .menu__desk, .switch__desktop{
   display: none;
@@ -324,6 +383,7 @@ h1 span{
   margin-left: 25px;
   background-color: #00fff666;
   z-index: -2;
+  animation: pendulum 40s ease-in-out infinite;
 }
 
   .container__btn{
@@ -362,7 +422,7 @@ h1 span{
 }
 .container__social-network{
   position: absolute;
-    top: 250px;
+    top: 200px;
     right: 0;
 }
 .buttons-container {
@@ -370,6 +430,7 @@ h1 span{
   justify-content: center;
   gap: 30px;
 }
+
 .buttons-container button,
 .swal2-confirm {
     width: 100px;  
@@ -447,6 +508,16 @@ section p{
   border-radius: 20px;
   align-content: center;
 }
+.container-subs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.container-subs div {
+  padding: 2rem;
+  background-color: var(--bg-dark);
+  border-radius: .5rem;
+}
 h3{
   color: var(--primary-color);
 }
@@ -514,6 +585,12 @@ details[open] summary {
 }
 .container__project-cards{
   margin: 30px 0;
+}
+.neon-box-blue {
+  box-shadow: 0 0 7px #0ff, 0 0 10px #0ff, 0 0 21px #0ff;
+}
+.neon-box-pink {
+  box-shadow: 0 0 7px #f0f, 0 0 10px #f0f, 0 0 21px #f0f;
 }
 .project-card{
   background: #191c29;
@@ -824,9 +901,9 @@ button {
   cursor: pointer;
   transition: background 0.3s;
 }
-button:hover {
+/* button:hover {
   background: #ff6b81;
-}
+} */
 
 @keyframes fadeInLeft {
   from {
@@ -847,6 +924,18 @@ button:hover {
   to {
       opacity: 1;
       transform: translateX(0);
+  }
+}
+
+@keyframes pendulum {
+  0% {
+      transform: translateX(-100px);
+  }
+  50% {
+      transform: translateX(100px);
+  }
+  100% {
+      transform: translateX(-100px);
   }
 }
 
@@ -971,6 +1060,9 @@ button:hover {
     }
     .container__image-about, .container__text-about{
       width: 50%;
+    }
+    .container-subs {
+      flex-direction: row;
     }
     section {
       position: relative;
