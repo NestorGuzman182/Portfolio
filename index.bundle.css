@@ -23,7 +23,7 @@ html {
   scroll-behavior: smooth;
 }
 body{
-    background-image: url(images/background..png) !important;
+    background-image: url(a1863bf53c8a758b6a4d.png) !important;
     font-family: Roboto;
     max-width: 1420px;
     margin: auto;
@@ -235,6 +235,7 @@ header .menu__list a, header i{
   color: rgba(236, 72, 153, 1);
 }
 .eng span {
+  color: rgba(236, 72, 153, 1);
   transform: translateX(29px);
 }
 .eng .circle {
@@ -248,6 +249,7 @@ header .menu__list a, header i{
 }
 .spa span {
   transform: translateX(4px);
+  color: rgba(34, 197, 94, 1);
 }
 .spa .circle {
   background-color: rgba(34, 197, 94, 1);
@@ -763,7 +765,7 @@ input[type="submit"]:disabled{
   -webkit-justify-content: center;
   -ms-justify-content: center;
   text-align: center;
-  margin-top: 40px;
+  margin: 40px 0;
 }
 .box-player{
 	height: 35vh;
