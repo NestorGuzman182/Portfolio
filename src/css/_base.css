@@ -1,0 +1,100 @@
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+:root {
+    --primary-color: #8ccff9;
+    --secondary-color: #f074fd;
+    --dark-color: #131e34;
+    --second-dark-color: #152238;
+    --bg-dark: #060d13;
+    --white: #eff3f8;
+
+    --pink-hsl: 330, 83%, 60%;
+    --green-hsl: 142, 64%, 45%;
+
+    --font-main: "Roboto", sans-serif;
+    --max-width: 1420px;
+
+    --text-glow-primary: rgba(0, 178, 255, 1);
+    --text-glow-secondary: rgba(38, 104, 127, 1);
+    --text-glow-hover-primary: rgb(255, 0, 255);
+    --text-glow-hover-secondary: rgb(117, 38, 127);
+
+    --neon-blue: #0ff;
+    --neon-pink: #f0f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--white);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url("../images/background.png");
+    font-family: var(--font-main);
+    max-width: var(--max-width);
+    margin: auto;
+    overflow-x: hidden;
+    color: var(--white);
+}
+
+header {
+    height: 70px;
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: space-around;
+    will-change: scroll-position;
+    transition: transform 0.7s linear;
+}
+
+header i {
+    margin: auto;
+    margin-right: 5%;
+    font-size: 2.3rem;
+}
+
+i {
+    color: var(--primary-color);
+}
+
+main {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+main h1 {
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 2.9rem;
+    letter-spacing: 1px;
+    margin: auto;
+}
+
+h1 {
+    overflow: hidden; 
+    border-right: .15em solid var(--primary-color); /* The typwriter cursor */
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em;
+}
+
+h1 span {
+    color: #CB0FFF;
+}
+
+.hidden {
+    display: none;
+}
