@@ -70,9 +70,9 @@ export class TicTacToeGame {
 
     checkWinningMove(player) {
         const winPatterns = [
-          [0, 1, 2], [3, 4, 5], [6, 7, 8], // Horizontales
-          [0, 3, 6], [1, 4, 7], [2, 5, 8], // Verticales
-          [0, 4, 8], [2, 4, 6]            // Diagonales
+          [0, 1, 2], [3, 4, 5], [6, 7, 8],
+          [0, 3, 6], [1, 4, 7], [2, 5, 8], 
+          [0, 4, 8], [2, 4, 6]            
         ];
         return winPatterns.some(([a, b, c]) => this.board[a] === player && this.board[b] === player && this.board[c] === player);
     }
@@ -102,7 +102,6 @@ export class TicTacToeGame {
         this.board.fill("");
         this.currentPlayer = "X";
         this.resultDiv.innerHTML = "";
-        console.log('board-cont 2=> ', this.boardContainer);
         this.boardContainer.classList.remove("disabled");
         this.cells.forEach(cell => {
             cell.innerHTML = "";
@@ -110,6 +109,4 @@ export class TicTacToeGame {
         });
     }
 
-    //cells.forEach(cell => cell.addEventListener("click", this.handleCellClick));
-   //.resetGame = resetGame;
 }

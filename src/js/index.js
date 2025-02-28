@@ -16,9 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const subsections = document.querySelectorAll('.subsection');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            console.log('entry =>', entry);
             if(entry.isIntersecting) {
-                console.log('Mostrando');
                 entry.target.classList.add('show');
             }
         });
@@ -53,7 +51,7 @@ skillRender();
 function orderByCategory(arr) {
     return arr.reduce((acc, obj) => {
         const { category, ...skill } = obj;
-        console.log(skill);
+
         if(!acc[category]) {
             acc[category] = { category, skills: [] };
         }
@@ -74,18 +72,9 @@ function showForm() {
         background: '#060d13',
         didOpen: () => {
             //document.querySelector('.swal-close-button').style.color = '#e6007e';
-            // Obtener el formulario clonado dentro del modal
            //const modalForm = document.querySelector(".swal2-html-container form");
 
             // Agregar evento de envío para capturar los datos
-/*             modalForm.addEventListener("submit", (e) => {
-                e.preventDefault();
-
-                const formData = new FormData(modalForm);
-                console.log("Datos enviados:", Object.fromEntries(formData.entries()));
-
-                Swal.fire("Success!", "Your message has been sent!", "success");
-            }); */
         }
     });
 }
@@ -119,6 +108,7 @@ function setupGame() {
     const btnReset = document.getElementById('btn-reset');
     tictacgame.init();
     btnReset.addEventListener('click', () => tictacgame.resetGame());
+    
     const buttonsContainer = document.querySelector(".buttons-container");
     const confirmButton = document.querySelector(".swal2-confirm");
     buttonsContainer.appendChild(confirmButton);

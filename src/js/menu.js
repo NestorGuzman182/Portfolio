@@ -1,20 +1,8 @@
-const ipad = window.matchMedia('screen and (max-width: 786px');
+export const ipad = window.matchMedia('screen and (max-width: 786px');
 const menu = document.querySelector('.navbar');
 const showButton = document.querySelector('#btn-menu');
 const closeButton = document.querySelector('#btn-menu-2');
 
-/* document.addEventListener("DOMContentLoaded", function () {
-    const header = document.querySelector("header");
-    const scrollThreshold = 200;
-
-    window.addEventListener("scroll", function () {
-        if (window.scrollY > scrollThreshold) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        } 
-    });
-}); */
 
 document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
@@ -55,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     navLinks.forEach((link) => {
         link.addEventListener('click', function (event) {
-            event.preventDefault();
+            //event.preventDefault();
 
             const sectionId = this.getAttribute("href").substring(1);
             const section = document.getElementById(sectionId);
@@ -64,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 navLinks.forEach((elem) => elem.classList.remove('active'));
                 this.classList.add('active')
               window.scrollTo({
-                top: section.offsetTop - 50, // Ajusta según el margen
+                top: section.offsetTop - 50, 
                 behavior: "smooth",
               }); 
             }
@@ -88,14 +76,14 @@ function close (){
     showButton.classList.remove('hidden')
 }
 
-function validate (event){
+export function validate (event){
     if(event.matches){
         showButton.addEventListener('click', show);
         closeButton.addEventListener('click', close);
     }else{ 
         showButton.removeEventListener('click', show);
         closeButton.removeEventListener('click', close)
-        menu.classList.remove('is-active'); // Cierra el menú si se cambia a pantalla grande
+        menu.classList.remove('is-active');
         showButton.classList.remove('hidden');
         closeButton.classList.add('hidden');
     }
