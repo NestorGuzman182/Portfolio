@@ -19,8 +19,10 @@
             "Portfolio": "Proyectos", 
             "contact":"Trabajemos juntos" 
         },
-        "bio1": "Hola, soy Nestor, un desarrollador Frontend y de Javascript apasionado por la tecnología y las soluciones innovadoras. Con más de 4 años de experiencia, he trabajado en diversos proyectos de desarrollo web, desde pequeñas startups hasta grandes empresas.",
-        "bio2": "Mi especialidad es la creación de aplicaciones web eficientes y fáciles de usar. Me encanta trabajar con tecnologías modernas y herramientas de desarrollo, como React, Angular, Vue, Node.js, TypeScript, entre otros. Además, tengo amplia experiencia en la creación de sitios web responsivos y adaptables a diferentes dispositivos móviles.",
+        "bio1": "Soy un apasionado desarrollador de frontend con un ojo agudo para el diseño y un amor por crear experiencias digitales envolventes. Combino mi experiencia técnica con una visión creativa para crear aplicaciones web asombrosas.",
+        "bio2": "Mi trayectoria en el desarrollo web comenzó cuando descubrí mi pasión por crear interfaces de usuario hermosas y funcionales. Desde entonces, he estado aprendiendo y mejorando constantemente mis habilidades para ofrecer las mejores soluciones posibles.",
+        "iDo": "Me especializo en la creación de aplicaciones web responsivas utilizando tecnologías modernas como React, Vue, Angular y TypeScript. Mi objetivo es crear interfaces de usuario intuitivas con atención al detalle y al rendimiento.",
+        "approach": "Creo en el código limpio, el diseño responsivo y el desarrollo centrado en el usuario. Cada proyecto es una oportunidad para crear algo único e impactante, garantizando al mismo tiempo la mejor experiencia de usuario posible.",
         "skills": "Soy un apasionado de la resolución de problemas y siempre estoy buscando nuevas formas de mejorar la experiencia de usuario. Creo que el desarrollo web es una forma de arte, y me esfuerzo por crear diseños atractivos y limpios para cada uno de mis proyectos.",
         "contactMe": "Si estás buscando un desarrollador web confiable y experimentado para tu próximo proyecto, no dudes en contactarme. Estoy emocionado de trabajar contigo y crear soluciones innovadoras juntos."
     }
