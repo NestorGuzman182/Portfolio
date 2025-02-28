@@ -66,6 +66,35 @@ i {
     color: var(--primary-color);
 }
 
+main {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+main h1 {
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 2.9rem;
+    letter-spacing: 1px;
+    margin: auto;
+}
+
+h1 {
+    overflow: hidden; 
+    border-right: .15em solid var(--primary-color); /* The typwriter cursor */
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em;
+}
+
+h1 span {
+    color: #CB0FFF;
+}
+
 .hidden {
     display: none;
 }
@@ -258,32 +287,6 @@ header i {
 .btn-mobile i {
     transition: opacity 0.3s ease-in-out;
 }
-main{
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    padding: 30px;
-    border-radius: 20px;
-}
-main h1 {
-    color: #FFFFFF;
-    text-align: center;
-    line-height: 2.9rem;
-    letter-spacing: 1px;
-    margin: auto;
-}
-h1 {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid var(--primary-color); /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-}
-h1 span {
-    color: #CB0FFF;
-}
-
 .container__title{
   order: 2;
 }
@@ -308,12 +311,7 @@ h1 span {
   white-space: nowrap;
   animation: typing 1s steps(20, end), blink-caret .5s step-end infinite;
 } 
-/* .container__typewriter p:last-child {
-  border-right: none;
-}
-.container__typewriter p span{
-  color: var(--primary-color);
-} */
+
 .container__typewriter p:nth-child(1){
   font-size: 1.3rem;
 }
@@ -361,7 +359,6 @@ h1 span {
   width: 300px;
   height: 300px;
   border-radius: 50%;
- /*  background-color: red; */
 }
 .circle1{
   top: -30px;
@@ -633,7 +630,7 @@ details[open] summary {
   opacity: 0;
   border-radius: 0.5rem;
   transition: opacity 0.5s ease-in-out;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .project-card:hover .card-glow {
@@ -652,10 +649,12 @@ details[open] summary {
   border-radius: 0.5rem;
 }
 .card-icons {
+  position: relative;
   display: flex;
   justify-content: center;
   margin-top: 40px;
   gap: 20px;
+  z-index: 20;
 }
 .card-icons a i {
   color: var(--neon-blue);
@@ -1043,6 +1042,7 @@ button {
     }
     .hero{
       flex-direction: row;
+      margin-bottom: 20px;
     }
     .container__text-about{
       padding: 2rem;
