@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-//const isProd = process.env.NODE_ENV === "production";
+
 
 module.exports = {
     entry: {
@@ -12,6 +12,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].bundle.js',
+        clean: true
     },
     resolve: {
         extensions: ['.js', '.json']
@@ -31,10 +32,33 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|jpeg|gif|svg)?$/,
-                type: 'asset/resource',
-                generator:   {
-                       filename: 'images/[name].[ext]'
+                type: 'asset',
+                generator: {
+                    filename: 'images/[name][ext]'
+                },
+                use: [
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            mozjpeg: {
+                                progressive: true,
+                                quality: 75
+                            },
+                            optipng: {
+                                enabled: true
+                            },
+                            pngquant: {
+                                quality: [0.65, 0.90], speed: 4
+                            },
+                            gifsicle: {
+                                interlaced: false
+                            },
+                            webp: {
+                                quality: 75
+                            }
+                        }
                     }
+                ]   
             },
             {
                 test: /\.json$/,
