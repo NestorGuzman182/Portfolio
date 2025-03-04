@@ -5,31 +5,33 @@ import '../images/profile.jpg';
 import '../images/profile-3.jpeg';
 
 let valueLang = 'ENG'
-let toggleConts = document.querySelectorAll(".toggle-cont");
 let textsToChange = document.querySelectorAll("[data-section]");
 
-toggleConts.forEach((toggleCont) => {
-  let toggleDark = toggleCont.querySelector(".dark");
-  let toggleLight = toggleCont.querySelector(".light");
-  let flag = false;
+const toggleButton = document.getElementById('toggle-btn'); 
+const toggleButtonMobile = document.getElementById('toggle-btn-mob'); 
+const toggleButtons = [toggleButton, toggleButtonMobile].filter(Boolean)
 
-  toggleCont.addEventListener("click", (e) => {
-    console.log(e)
-    flag = !flag;
-    console.log(flag)
-    if (flag) {
-      toggleDark.classList.remove("active");
-      toggleLight.classList.add("active");
-      valueLang = e.target.parentElement.dataset.language;
-      console.log(valueLang)
-      changeLanguage(valueLang);
-    } else {
-      toggleDark.classList.add("active");
-      toggleLight.classList.remove("active");
-      valueLang = e.target.children[0].dataset.language;
-      console.log(valueLang)
-      changeLanguage(valueLang);
-    }
+toggleButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    let flag = button.classList.contains('eng');
+    let textLanguage = [
+      document.getElementById('lang-text'), 
+      document.getElementById('lang-text-mob')
+    ].filter(Boolean);
+    
+    toggleButtons.forEach(button => {
+      if (flag) {
+        button.classList.remove("eng");
+        button.classList.add("spa");
+        valueLang = 'SPA';
+      } else {
+        button.classList.add("eng");
+        button.classList.remove("spa");
+        valueLang = 'ENG';
+      }
+    })
+    textLanguage.forEach(text => text.textContent = valueLang);
+    changeLanguage(valueLang);
   });
 })
 
@@ -38,7 +40,6 @@ const changeLanguage = async (language) => {
     const basePath = window.location.hostname.includes("github.io") ? "/Portfolio" : "";
     const response = await fetch(`${basePath}/lang/${language}.json`);
     const data = await response.json();
-    console.log('base path => ', basePath);
 
     textsToChange.forEach(text => {
       let section = text.getAttribute("data-section");
@@ -52,7 +53,6 @@ const changeLanguage = async (language) => {
     console.error('Error al cargar la informacion: ', error);
   }
 }
-
 
 const typeWriter = (() => {
   const elements = document.querySelectorAll('.container__typewriter p');

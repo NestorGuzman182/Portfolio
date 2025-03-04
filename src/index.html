@@ -13,7 +13,7 @@
 <body>
     <header>
         <div class="container-logo">
-            <img src="./images/next-logo..png" alt="">
+            <img src="./images/next-logo.png" alt="">
         </div>
         <nav class="navbar">
             <ul class="nav menu__list">
@@ -25,13 +25,11 @@
                         data-value="portfolio">Projects</a></li>
                 <li class="nav-item"><i class="fas fa-suitcase"></i> <a href="#contact-me" data-section="profile|menu"
                         data-value="contact">Work Together?</a></li>
-                <div class="toggle-cont" style="margin-top: 100px;">
-                    <div class="toggle dark active" data-language="ENG">
-                        <p class="lang">ENG</p>
-                    </div>
-                    <div class="toggle light" data-language="SPA">
-                        <p class="lang">SPA</p>
-                    </div>
+                <div class="toggle-container">
+                    <button id="toggle-btn-mob" class="toggle-button eng">
+                        <span id="lang-text-mob">ENG</span>
+                        <div class="circle"></div>
+                    </button>
                 </div>
             </ul>
         </nav>
@@ -39,18 +37,15 @@
         <nav class="navbar-desktop">
             <ul class="nav menu__desk">
                 <li class="nav-item"><a href="#" data-section="profile|menu" data-value="home">Home</a></li>
-                <li class="nav-item"><a href="#about-me" data-section="profile|menu" data-value="aboutMe">About Me</a>
-                </li>
+                <li class="nav-item"><a href="#about-me" data-section="profile|menu" data-value="aboutMe">About Me</a></li>
                 <li class="nav-item"><a href="#portfolio" data-section="profile|menu" data-value="portfolio">Projects</a></li>
-                <li class="nav-item"><a href="#contact-me" data-section="profile|menu" data-value="contact">Work Together?</a></li>
+                <li class="nav-item"><a href="#contact-me" data-section="profile|menu" data-value="contact">Contact</a></li>
             </ul>
-            <div class="toggle-cont switch__desktop">
-                <div class="toggle dark active" data-language="ENG">
-                    <p class="lang">ENG</p>
-                </div>
-                <div class="toggle light" data-language="SPA">
-                    <p class="lang">SPA</p>
-                </div>
+            <div class="toggle-container switch__desktop">
+                <button id="toggle-btn" class="toggle-button eng">
+                    <span id="lang-text">ENG</span>
+                    <div class="circle"></div>
+                </button>
             </div>
         </nav>
         <div class="btn-mobile">
@@ -73,7 +68,7 @@
         </div>
 
         <div class="container__image-profile">
-            <img src="./images/profile..jpg" alt="">
+            <img src="./images/profile.jpg" alt="">
             <div class="circle1"></div>
             <div class="circle2"></div>
         </div>
@@ -105,7 +100,7 @@
         <h2  data-section="profile|titles" data-value="aboutMe">About Me</h2>
         <div class="hero">
             <div class="container__image-about subsection">
-                <img src="./images/profile-3..jpeg" alt="">
+                <img src="./images/profile-3.jpeg" alt="">
             </div>
             <div class="container__text-about subsection">
                 <p id="bio-1" data-section="profile" data-value="bio1"></p>
