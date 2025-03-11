@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -17,6 +17,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.json']
     },
+    mode: 'development',
     module: {
         rules: [
             {
@@ -32,7 +33,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|jpeg|gif|svg)?$/,
-                type: 'asset',
+                type: 'asset/resource',
                 generator: {
                     filename: 'images/[name][ext]'
                 },
@@ -82,8 +83,24 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 { from: "public/lang", to: "lang" },
+                { from: "src/images", to: "images" }
               ],
         })
       
     ],
+    optimization: {
+        minimizer: [
+            new ImageMinimizerPlugin({
+              minimizer: {
+                implementation: ImageMinimizerPlugin.imageminMinify,
+                options: {
+                    plugins: [
+                        ['imagemin-mozjpeg', { quality: 75 }],
+                        ['imagemin-pngquant', { quality: [0.6, 0.8] }]
+                    ]
+                }
+              }  
+            })
+        ]
+    }
 }
