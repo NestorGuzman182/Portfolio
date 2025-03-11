@@ -32,6 +32,7 @@
     padding: 0;
     box-sizing: border-box;
     color: var(--white);
+    font-family: var(--font-main);
 }
 
 html {
@@ -468,13 +469,12 @@ section{
   margin: auto;
   margin-top: 5rem;
   padding: 1rem;
-  text-align: justify;
 /*   max-width: 1080px; */
 }
 section h2{
   margin: 2.3rem;
   color: #ff117888;
-  font-size: 2.3rem;
+  font-size: 3.6rem;
   text-shadow: 0 0 var(--secondary-color);
 }
 section p{
@@ -593,6 +593,7 @@ details[open] summary {
   position: relative;
   width: 390px;
   height: 280px;
+  border-radius: 0.5rem;
   margin: auto;
 }
 
@@ -605,7 +606,7 @@ details[open] summary {
   position: relative;
   transition: box-shadow 0.3s ease-in-out;
 }
-.card-content:hover {
+.project-card:hover {
   box-shadow: 0 0 7px #0ff, 0 0 10px #0ff, 0 0 21px #0ff;
 }
 .card-content img {
@@ -703,6 +704,7 @@ input[type="text"],
 		height: 2.75rem;
 		color:#ffffff;
     background-color: var(--second-dark-color);
+    font-size: 1.1rem;
 	}
 
 	textarea {
@@ -734,7 +736,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     border-color: #47D3E5;
     box-shadow: 0 0 3px #47D3E5, 0 0 6px #47D3E5, 0 0 9px #47D3E5;
 }
-input[type="submit"], input[type="reset"], input[type="button"], button, .button {
+button[type="submit"], input[type="reset"], input[type="button"], button, .button {
   transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
   border: 0;
   cursor: pointer;
@@ -757,7 +759,7 @@ input[type="submit"], input[type="reset"], input[type="button"], button, .button
   box-shadow: 0 0 10px rgba(230, 0, 126, 0.8), 0 0 30px rgba(230, 0, 126, 0.8), 0 0 60px rgba(230, 0, 126, 0.8);
   color: #ffffff !important;
 }
-input[type="submit"]:disabled{
+button[type="submit"]:disabled{
   pointer-events: none;
   opacity: 0.25;
   width: -webkit-fill-available;
@@ -767,7 +769,7 @@ input[type="submit"]:disabled{
   -webkit-justify-content: center;
   -ms-justify-content: center;
   text-align: center;
-  margin: 40px 0;
+  margin: 25px 0;
 }
 .box-player{
 	height: 35vh;
@@ -875,8 +877,14 @@ button {
   color: white;
   border: 1px solid white;
   border-radius: 5px;
+  font-weight: 700 !important;
 }
-button {
+button i {
+  color: white;
+  font-weight: 700;
+  margin-left: 3px;
+}
+/* button {
   margin-top: 15px;
   padding: 10px 15px;
   background: #ff4757;
@@ -885,10 +893,68 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s;
-}
+} */
 /* button:hover {
   background: #ff6b81;
 } */
+.container-contact {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dark-color);
+}
+.container-contact form {
+  width: -webkit-fill-available;
+}
+.container-contact iframe {
+  border-radius: 10px;
+  width: auto;
+  margin: auto;
+  filter: invert(90%) hue-rotate(180deg);
+}
+.map-container {
+  width: -webkit-fill-available;
+  border-radius: 10px;
+  margin: auto;
+}
+.info {
+  position: absolute;
+  background: var(--bg-dark);
+  height: 100px;
+  width: 300px;
+  top: 10px;
+  left: 10px;
+}
+.info ul {
+  padding: 1rem;
+  list-style: none;
+}
+.info ul li {
+  margin: 0.4rem;
+  font-size: small;
+}
+.info ul li i {
+  margin-right: 0.7rem;
+}
+
+footer {
+  background: var(--bg-dark);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: smaller;
+}
+.footer-container {
+  text-align: center;
+  line-height: 1.8rem;
+}
+.footer-social {
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+  gap: 15px;
+  margin-top: 1.5rem;
+}
 
 @keyframes fadeInLeft {
   from {
@@ -964,7 +1030,6 @@ button {
         display: flex;
         flex-direction: row;
         align-items: center;
-        max-width: 1280px;
     }
     .container__title{
       order: 1;
@@ -1046,6 +1111,7 @@ button {
     }
     .container__text-about{
       padding: 2rem;
+      border-radius: 0 20px 20px 0;
     }
     .container-subs {
       flex-direction: row;
@@ -1057,6 +1123,12 @@ button {
     }
     .scrolled {
       background-color: rgba(6, 13, 19, 0.9);
+    }
+    .container-contact {
+      flex-direction: row;
+    }
+    .container-contact iframe {
+      width: -webkit-fill-available;
     }
 }
 @charset "UTF-8";/*!
