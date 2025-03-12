@@ -907,7 +907,7 @@ button i {
 }
 .container-contact iframe {
   border-radius: 10px;
-  width: auto;
+  width: -webkit-fill-available;
   margin: auto;
   filter: invert(90%) hue-rotate(180deg);
 }
@@ -1126,9 +1126,6 @@ footer {
     }
     .container-contact {
       flex-direction: row;
-    }
-    .container-contact iframe {
-      width: -webkit-fill-available;
     }
 }
 @charset "UTF-8";/*!
