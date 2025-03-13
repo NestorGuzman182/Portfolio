@@ -4433,17 +4433,43 @@ async function skillRender() {
     render.innerHTML += `
             <details>
                 <summary>${category.category}</summary>
-                <div class="container__general">
-                    ${category.skills.map(skill => `
-                        <div class="container__skill">
-                            ${skill.img}
-                            <p>${skill.name}</p>
-                        </div>
-                    `).join('')}
+                <div class="content">
+                    <div class="container__general">
+                        ${category.skills.map(skill => `
+                            <div class="container__skill">
+                                ${skill.img}
+                                <p>${skill.name}</p>
+                            </div>
+                        `).join('')}
+                    </div>
                 </div>
             </details>
         `;
   }
+  document.querySelectorAll("details").forEach(detail => {
+    let content = detail.querySelector(".content");
+    detail.addEventListener("click", function (event) {
+      if (event.target.tagName === "SUMMARY") {
+        event.preventDefault();
+        if (!detail.open) {
+          detail.open = true;
+          requestAnimationFrame(() => {
+            content.style.display = "block";
+            content.style.maxHeight = content.scrollHeight + "px";
+          });
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          requestAnimationFrame(() => {
+            content.style.maxHeight = "0px";
+          });
+          setTimeout(() => {
+            detail.open = false;
+            content.style.display = 'none';
+          }, 300);
+        }
+      }
+    });
+  });
 }
 skillRender();
 function orderByCategory(arr) {
