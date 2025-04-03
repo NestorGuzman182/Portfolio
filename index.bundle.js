@@ -8,6 +8,7 @@
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   H: () => (/* binding */ skills)
 /* harmony export */ });
+/* unused harmony export projects */
 const skills = [{
   name: "HTML5",
   category: 'Frontend',
@@ -108,6 +109,15 @@ const skills = [{
   name: "Vite",
   category: "Frontend",
   img: '<i class="fas fa-bolt"></i>'
+}];
+const projects = [{
+  name: 'Movies Streaming',
+  summary: 'A modern web application SPA with api TMDB database',
+  badges: ['JS Vanilla', 'CSS', 'HTML'],
+  img: '../images/projects-screen/project-1.png',
+  description: '',
+  linkGithub: '',
+  linkLive: ''
 }];
 
 /***/ }),
